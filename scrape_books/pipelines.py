@@ -15,8 +15,8 @@ class ScrapeBooksPipeline:
             'localhost',
             27017
         )
-        db = self.conn['KitapYurdu']
-        self.collection = db['ProductsInfo']
+        db = self.conn['BooksDB']
+        self.collection = db['BooksInfo']
         
     def process_item(self, item, spider):
         self.collection.insert_one(dict(item))
